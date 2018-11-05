@@ -16,16 +16,18 @@ int main(int argc, char * argv[])
 	char service[20];
 	//int port = 27015;
 
-	memset(&sa, 0, sizeof(sa));
-	sa.sin_family = AF_INET;
-	sa.sin_addr.s_addr = inet_addr(argv[1]);
-	//sa.sin_port = htons(port);
-
 	if(argc!=2)
 	{
 		cout<<"error: abort"<<endl;
 		return 1;
 	}
+	
+	memset(&sa, 0, sizeof(sa));
+	sa.sin_family = AF_INET;
+	sa.sin_addr.s_addr = inet_addr(argv[1]);
+	//sa.sin_port = htons(port);
+
+	
 
 	inet_pton(AF_INET, argv[1],&sa.sin_addr);
 

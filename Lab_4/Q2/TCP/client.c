@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
  
     ipOfServer.sin_family = AF_INET;
     ipOfServer.sin_port = htons(port_no);
-    ipOfServer.sin_addr.s_addr = inet_addr(argv[1]);
+    ipOfServer.sin_addr.s_addr = INADDR_ANY;
  
     if(connect(CreateSocket, (struct sockaddr *)&ipOfServer, sizeof(ipOfServer))<0)
     {
@@ -46,11 +46,7 @@ int main(int argc, char* argv[])
     while((n = read(CreateSocket, dataReceived, sizeof(dataReceived)-1)) > 0)
     {
         dataReceived[n] = 0;
-        if(fputs(dataReceived, stdout) == EOF)
-        {
-            printf("\nStandard output error");
-        }
- 
+        fputs(dataReceived, stdout); 
         printf("\n");
     }
  

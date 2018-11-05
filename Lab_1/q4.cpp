@@ -28,10 +28,7 @@ int main()
 			int g1,g2;
 	
 			if(ppid>0)
-			{
-				
-				
-				
+			{subl
 				int ppl = fork();
 				if(ppl>0)
 				{

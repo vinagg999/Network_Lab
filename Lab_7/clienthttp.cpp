@@ -115,8 +115,6 @@ void httpreq(const char* verb, const char* hostname, const char * port, const ch
     	nm[4+i] = ext[i];
 
     rename("abc",nm);
-
-
     return;
 
 }
@@ -132,8 +130,6 @@ int main(int argc, char* argv[])
 	httpreq("GET",argv[1],argv[3],"/",argv[2]);
 
 	return 0;
-
-
 }
 
 //http://demo.testfire.net/bank/login.aspx
